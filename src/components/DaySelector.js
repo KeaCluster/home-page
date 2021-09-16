@@ -14,9 +14,15 @@ const useStyles = makeStyles(() => ({
     margin: "10px",
     fontSize: "12px",
   },
+  inactiveButton: {
+    backgroundColor: "#fff",
+    color: "black",
+    fontSize: "12px",
+  },
   activeButton: {
     backgroundColor: "#FDC963",
     color: "#fff",
+    fontSize: "12px",
   },
 }));
 
@@ -32,14 +38,16 @@ const DaySelector = () => {
   };
 
   return (
-    <Container className={classes.daysWrapper}>
+    <div className={classes.daysWrapper}>
       <Toolbar className={classes.toolBar}>
         <div className={classes.day}>
           <p style={{ alignContent: "center" }}>Sun</p>
           <IconButton
             name="first"
             className={
-              activeButton === "first" ? `${classes.activeButton}` : ""
+              activeButton === "first"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -52,7 +60,9 @@ const DaySelector = () => {
           <IconButton
             name="second"
             className={
-              activeButton === "second" ? `${classes.activeButton}` : ""
+              activeButton === "second"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -64,7 +74,9 @@ const DaySelector = () => {
           <IconButton
             name="third"
             className={
-              activeButton === "third" ? `${classes.activeButton}` : ""
+              activeButton === "third"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -76,7 +88,9 @@ const DaySelector = () => {
           <IconButton
             name="fourth"
             className={
-              activeButton === "fourth" ? `${classes.activeButton}` : ""
+              activeButton === "fourth"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -88,7 +102,9 @@ const DaySelector = () => {
           <IconButton
             name="fifth"
             className={
-              activeButton === "fifth" ? `${classes.activeButton}` : ""
+              activeButton === "fifth"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -100,7 +116,9 @@ const DaySelector = () => {
           <IconButton
             name="sixth"
             className={
-              activeButton === "sixth" ? `${classes.activeButton}` : ""
+              activeButton === "sixth"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -112,7 +130,9 @@ const DaySelector = () => {
           <IconButton
             name="seventh"
             className={
-              activeButton === "seventh" ? `${classes.activeButton}` : ""
+              activeButton === "seventh"
+                ? `${classes.activeButton}`
+                : `${classes.inactiveButton}`
             }
             onClick={activeButtonHandler}
           >
@@ -120,7 +140,7 @@ const DaySelector = () => {
           </IconButton>
         </div>
       </Toolbar>
-    </Container>
+    </div>
   );
 };
 
