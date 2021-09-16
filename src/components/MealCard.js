@@ -3,7 +3,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
-  cardWrapper: {},
+  cardWrapper: {
+    display: "block",
+    marginTop: "50px",
+  },
   container: {
     position: "relative",
     textAlign: "center",
@@ -34,9 +37,11 @@ const useStyles = makeStyles(() => ({
 }));
 
 const MealCard = () => {
+  // prepare data for state change
   const [mealData, setMealData] = useState([]);
   const classes = useStyles();
 
+  // Fetch and set to Hook
   useEffect(() => {
     const apiUrl = "https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef";
     fetch(apiUrl)
@@ -46,10 +51,10 @@ const MealCard = () => {
 
   return (
     <div className={classes.cardWrapper}>
-      <Grid sx={{ flexGrop: 1 }} container spacing={2}>
+      <Grid sx={{ flexGroup: 1, mx: "auto" }} container spacing={2}>
         {mealData.map((meal, i) => {
           return (
-            <div className={classes.container}>
+            <div key={meal.idMeal} className={classes.container}>
               <img
                 className={classes.media}
                 src={meal.strMealThumb}
