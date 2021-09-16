@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Toolbar, Container } from "@material-ui/core";
+import { Toolbar } from "@material-ui/core";
 import { IconButton } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
@@ -26,16 +26,24 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+// I based most of this code from stackoverflow
+// Another way of saying it was mostly ctrl+c & ctrl+v
+
 const DaySelector = () => {
   const classes = useStyles();
 
   //Button handler
+  // Set state to handle "first" attrib
   const [activeButton, setActiveButton] = useState("first");
 
+  // Switch state in case of click
   const activeButtonHandler = (e) => {
     const { name } = e.target;
     setActiveButton(name);
   };
+
+  // I wouldnt do all these buttons, just a single reusable,
+  //but I had no dates API to map.from as well as no time
 
   return (
     <div className={classes.daysWrapper}>
@@ -144,4 +152,5 @@ const DaySelector = () => {
   );
 };
 
-export { DaySelector };
+// src https://stackoverflow.com/questions/65921267/change-color-of-active-button-among-multiple-buttons-in-react-using-material-ui
+export default DaySelector;

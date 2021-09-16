@@ -1,12 +1,14 @@
 import "./App.css";
 import { makeStyles } from "@material-ui/core/styles";
-import { NavBar } from "./components/NavBar";
-import { DaySelector } from "./components/DaySelector";
+import NavBar from "./components/NavBar";
+import DaySelector from "./components/DaySelector";
+import MealCard from "./components/MealCard";
 
 const useStyles = makeStyles(() => ({
   app: {
     backgroundColor: "#E4E4E4",
     width: "100%",
+    height: "100%",
   },
 }));
 
@@ -17,9 +19,7 @@ function App() {
     <div className={("App", classes.app)}>
       <NavBar />
       <DaySelector />
-      <div>
-        <h1>Hello body</h1>
-      </div>
+      <MealCard />
     </div>
   );
 }
